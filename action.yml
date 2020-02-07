@@ -1,6 +1,6 @@
 name: 'Github Issue Labeler'
 description: 'Automatically apply a label to new Github issues in a repository'
-author: 'HumanCellAtlas'
+author: 'DataBiosphere'
 inputs: 
   repo-token:
     description: 'The GITHUB_TOKEN secret'
