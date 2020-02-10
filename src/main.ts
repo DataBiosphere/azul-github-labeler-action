@@ -22,12 +22,13 @@ async function run() {
 }
 
 function getIssueNumber(): number | undefined {
-    const issue = github.context.payload.issue;
-    if (!issue) {
-        return undefined;
-    } else {
-        return issue.number;
+    for (const attr of ["issue", "pull_request"]) {
+        const issue = github.context.payload[attr];
+        if (!!issue) {
+            return issue.number;
+        }
     }
+    return undefined;
 }
 
 async function addLabels(
