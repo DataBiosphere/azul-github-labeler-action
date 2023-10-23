@@ -15,7 +15,7 @@ async function run() {
         const client = new github.GitHub(token);
 
         await addLabels(client, issueNumber, label);
-    } catch (error) {
+    } catch (error:any) {
         core.error(error);
         core.setFailed(error.message);
     }
